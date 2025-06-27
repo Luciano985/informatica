@@ -1,0 +1,13 @@
+body{
+    background-color: gray;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+strong{
+    color:red
+}
+header, footer{
+    color:chocolate;
+    text-align: center; 
+    padding: 0.5rem; 
+}
