@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Juego de Adivinanza</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f7f7f7;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      max-width: 540px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    button {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1> Juego de Adivinanza</h1>
+    <p>Presiona el botón para jugar.</p>
+    <button id="jugar">Jugar</button>
+  </div>
+
+  <script>
+    document.getElementById("jugar").addEventListener("click", function() {
+      const numeroSecreto = Math.floor(Math.random() * 10) + 1; // número entre 1 y 10
+      let intento;
+
+      while (true) {
+        const entrada = prompt("Adivina el número (entre 1 y 10):");
+
+        // Si el usuario presiona Cancelar
+        if (entrada === null) {
+          alert("Juego cancelado. ¡Hasta la próxima!");
+          return;
+        }
+
+        intento = Number(entrada);
+
+        if (Number.isNaN(intento) || intento < 1 || intento > 10) {
+          alert("Por favor ingresa un número válido entre 1 y 10.");
+          continue;
+        }
+
+        if (intento === numeroSecreto) {
+          alert("🎉 ¡Correcto! El número era " + numeroSecreto + ".");
+          break;
+        } else {
+          alert(intento < numeroSecreto
+            ? "El número secreto es mayor 📈"
+            : "El número secreto es menor 📉"
+          );
+        }
+      }
+    });
+  </script>
+</body>
+</html>								

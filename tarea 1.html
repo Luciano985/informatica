@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Contador Disminuye</title>
+</head>
+<body>
+
+<h1 id="contador">10</h1>
+<button onclick="disminuirContador()">Disminuir</button>
+
+<script>
+  let valor = 10;
+
+  function disminuirContador() {
+    if (valor > 0) {
+      valor -= 1;
+      document.getElementById('contador').innerText = valor;
+    }
+  }
+</script>
+
+</body>
+</html>

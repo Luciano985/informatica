@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Cambiar Colores</title>
+</head>
+<body>
+
+<h1 id="titulo">Este es un texto</h1>
+
+<!-- Botones para cambiar colores -->
+<button onclick="cambiarColor('rojo')">Rojo</button>
+<button onclick="cambiarColor('azul')">Azul</button>
+<button onclick="cambiarColor('verde')">Verde</button>
+
+<script>
+  function cambiarColor(color) {
+    const texto = document.getElementById('titulo');
+    if (color === 'rojo') {
+      document.body.style.backgroundColor = 'red';
+      texto.style.color = 'white';
+    } else if (color === 'azul') {
+      document.body.style.backgroundColor = 'blue';
+      texto.style.color = 'yellow';
+    } else if (color === 'verde') {
+      document.body.style.backgroundColor = 'green';
+      texto.style.color = 'black';
+    }
+  }
+</script>
+
+</body>
+</html>
